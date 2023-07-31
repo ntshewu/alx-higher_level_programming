@@ -1,18 +1,14 @@
 #!/usr/bin/python3
 
-
-import dis
-
-
-def showMeByte(name):
-	return "hello "+name+" !!!"
-
-dis.dis(showMeByte)
-bytecode = dis.code_info(showMeByte)
-print(bytecode)
-
-bytecode = dis.Bytecode(showMeByte)
-print(bytecode)
-
-for i in bytecode:
-	print(i)
+def magic_calculation(a, b):
+    result = 0
+    for i in range(1, 3):
+        try:
+            if i > a:
+                raise Exception('Too far')
+            else:
+                result += a ** b / i
+        except:
+            result = b + a
+            break
+    return (result)
